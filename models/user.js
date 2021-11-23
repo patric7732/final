@@ -52,4 +52,9 @@ User.comparePassword = function(candidatePassword, hash, callback){
   });
 }
 
+// Return all user list
+User.getAll = function (callback) {
+  User.find(callback);
+};
+
 module.exports = User;

@@ -17,7 +17,8 @@ export class AuthService {
 
   prepEndpoint(ep) {
     // 1. 로컬서버에서개발시
-    // return 'http://localhost:3000/' + ep;
+    // return 'http://localhost:3000/' + ep;  
+
     // 2. 클라우드서버에서운영시
     return ep;
   }
@@ -32,6 +33,11 @@ export class AuthService {
     // const registerUrl = 'http://localhost:3000/users/register';
     const registerUrl = this.prepEndpoint('users/register');
     return this.http.post<any>(registerUrl, user, httpOptions);
+  }
+
+  registerCard(card: any): Observable<any> {
+    const registerCardUrl = this.prepEndpoint('users/card');
+    return this.http.post<any>(registerCardUrl, card, httpOptions);
   }
 
   authenticateUser(login: Login): Observable<any> {
@@ -64,8 +70,46 @@ export class AuthService {
     const profileUrl = this.prepEndpoint('users/profile');
     return this.http.get<any>(profileUrl, httpOptions1);
   }
+
+// Show user list ( just testing DB query) 
+getList(): Observable<any> {
+  let authToken: any = localStorage.getItem('authToken');
+  const httpOptions1 = {
+    headers: new HttpHeaders({
+      contentType: 'application/json',
+      authorization: 'Bearer ' + authToken,
+    }),
+  };
+  const listUrl = this.prepEndpoint('users/list');
+  return this.http.get<any>(listUrl, httpOptions1);
+}
+
+// 사용자 명함을 읽어오는 함수
+getCard(username: any): Observable<any> {
+  let authToken: any = localStorage.getItem('authToken');
+  const httpOptions1 = {
+    headers: new HttpHeaders({
+      contentType: 'application/json',
+      authorization: 'Bearer ' + authToken,
+    }),
+  };
+  const myCardUrl = this.prepEndpoint('users/myCard');
+  return this.http.post<any>(myCardUrl, username, httpOptions1);
+}
+
+
+
   loggedIn(): boolean {
     let authToken: any = localStorage.getItem('authToken');
     return !this.jwtHelper.isTokenExpired(authToken);
   }
+
+  // 환율정보 얻어오기
+  getRate(): Observable<any> {
+    const APIKey = 'a40a75a65ee0942724524910d9f9c827';
+    return this.http.get<any>(
+      `http://api.exchangeratesapi.io/v1/latest?access_key=${APIKey}`
+      );
+    }
+
 }
