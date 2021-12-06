@@ -115,8 +115,8 @@ getCard(username: any): Observable<any> {
 
 
     editUser(user: User): Observable<any> {
-      const registerUrl = "http://localhost:3000/users/edit";
-      // const registerUrl = this.prepEndpoint('users/register');
+      // const registerUrl = "http://localhost:3000/users/edit";
+      const registerUrl = this.prepEndpoint('users/register');
       return this.http.post<any>(registerUrl, user, httpOptions);
     }
     
