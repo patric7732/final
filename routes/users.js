@@ -149,5 +149,37 @@ router.post("/myCard", (req, res, next) => {
   });
 });
 
+router.post("/edit", (req, res, next) => {
+  let username = req.body.username;
+
+  
+  
+  
+  
+  let update = {
+      email: req.body.email,
+      password: req.body.password,
+  }
+  
+
+  User.getUserByUsername(username, (err, user) => {
+      let username = req.body.username;
+      
+      if (err) throw err;
+      if (user) {
+          User.updateUser(username, update, (err, user) => {
+              return res.json({
+                  success: true,
+                  msg: "프로필 업데이트 성공",
+              });
+          });
+          
+      } else {
+          
+          res.json({ success: false, msg: "명함 등록 실패" });
+      }
+  });
+});
+
 
 module.exports = router;

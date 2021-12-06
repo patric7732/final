@@ -22,6 +22,7 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import { QrgenComponent } from './components/qrgen/qrgen.component';
 import { QrscanComponent } from './components/qrscan/qrscan.component';
 import { ConvertComponent } from './components/convert/convert.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ConvertComponent } from './components/convert/convert.component';
     QrgenComponent,
     QrscanComponent,
     ConvertComponent,
+    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,

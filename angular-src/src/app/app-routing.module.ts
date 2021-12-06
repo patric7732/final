@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { QrgenComponent } from './components/qrgen/qrgen.component';
 import { QrscanComponent } from './components/qrscan/qrscan.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'qrgen', component: QrgenComponent, canActivate: [AuthGuard] },
   { path: 'qrscan', component: QrscanComponent, canActivate: [AuthGuard] },
   { path: 'convert', component: ConvertComponent, canActivate: [AuthGuard] },
+  { path: 'profile-edit',component: ProfileEditComponent, canActivate : [AuthGuard] },
 ];
 
 @NgModule({

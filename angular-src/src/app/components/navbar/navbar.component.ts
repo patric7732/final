@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -26,6 +27,7 @@ export class NavbarComponent implements OnInit {
       cssClass: 'alert-success',
       timeout: 3000,
     });
+    Swal.fire('로그아웃 되었습니다.', '좋은 하루 보내세요.', 'success');
     this.router.navigate(['/login']);
   }
 

@@ -1,4 +1,4 @@
-.card {
+.edit {
   text-align: center;
   margin: auto;
   width: 80%;
@@ -15,10 +15,6 @@
 }
 
 .foo {
-  position: relative;
-  text-align: center;
-  left: 0px;
-  bottom: 0px;
-  height: 60px;
-  width: 100%;
+  position: absolute;
+  bottom: 0;
 }

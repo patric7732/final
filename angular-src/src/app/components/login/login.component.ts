@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from 'src/app/services/auth.service';
 import { Login, UserNoPW } from 'src/app/models/User';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 3000,
         });
+        Swal.fire('로그인 되셨습니다.', '안녕하세요!', 'success');
         this.router.navigate(['dashboard']);
       } else {
         this.flashMessage.show(data.msg, {

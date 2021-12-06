@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gowun+Batang:wght@700&display=swap");
+
+* {
+  font-family: "Gowun Batang", serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  margin-bottom: 4rem;
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 1);
+}
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+.carousel-caption h1 {
+  text-shadow: 3px 3px 6px black;
+}
+
+.carousel-caption p {
+  text-shadow: 3px 3px 6px black;
+}
+
+.carousel-item {
+  height: 32rem;
+}
+
+.btn1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btn1 a {
+  margin: 5px;
+}
+
+.carousel-item {
+  background-image: url(main1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-wrapper {
+  margin: 3vw 0 5vw 0;
+  height: 40vh;
+}
+
+.icons {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.icon1 {
+  text-align: center;
+  margin: 0 5vw 0 5vw;
+}
+
+.main-wrapper h1 {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+
+.icon1 h2 {
+  margin: 20px;
+}
+
+// .main2 {
+//   margin: 10vh 10vh 10vh 10vh;
+// }
+
+.card img {
+  width: 50%;
+}
+.card {
+  align-items: center;
+  text-align: center;
+}
+.row {
+  margin-top: 1vh;
+}
+
+// .cards {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 10vh;
+//   height: 40vh;
+// }
+
+.card-title {
+  margin-top: 20px;
+}
+
+// footer
+.site-footer {
+  margin-top: 5vh;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 1vh;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+// .site-footer .social-icons {
+//   text-align: right;
+// }
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+.copyright-text {
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89;
+}
+
+.img1 {
+  background-image: url(logo.png);
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.img2 {
+  background-image: url(logo1.png);
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.card-img-top {
+  background-image: url(logo.png);
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-img-top1 {
+  background-image: url(logo1.png);
+  width: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

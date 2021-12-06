@@ -57,4 +57,29 @@ User.getAll = function (callback) {
   User.find(callback);
 };
 
+//비밀번호와 이메일 수정 
+User.updateUser= function(username, edituser, callback ){
+  const query = {username: username};
+  
+  bcrypt.genSalt(10, (err,salt) => {
+      bcrypt.hash(edituser.password, salt, (err,hash) => {
+          if(err) throw err;
+          const update = {
+              email: edituser.email,
+              password: hash,
+      
+          };
+          User.findOneAndUpdate(query,update,{ new: true, useFindAndModify: false },callback);
+          
+  });
+  });
+  
+  
+  
+
+  
+
+
+};
+
 module.exports = User;

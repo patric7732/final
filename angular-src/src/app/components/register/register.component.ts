@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from 'src/app/services/auth.service';
 import { ValidateService } from 'src/app/services/validate.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -46,6 +47,9 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
+
+
+
     // 사용자의 JSON 객체 생성
     const user = {
       name: this.name,
@@ -53,6 +57,25 @@ export class RegisterComponent implements OnInit {
       username: this.username,
       password: this.password1,
     }
+
+// 8글자
+if (this.password1.length < 8 || this.password1.length > 20) {
+  this.flashMessage.show('비밀번호를 8자리 ~ 20자리 이내로 입력해주세요.', {
+    cssClass: 'alert-danger',
+    timeout: 3000,
+  });
+  console.log("비밀번호를 8자리 ~ 20자리 이내로 입력해주세요.")
+  return false;
+} else if (this.password1.search(/\s/) != -1) {
+  this.flashMessage.show('비밀번호는 공백 없이 입력해주세요.', {
+    cssClass: 'alert-danger',
+    timeout: 3000,
+  });
+  console.log("비밀번호를 8자리 ~ 20자리 이내로 입력해주세요.")
+  return false;
+}
+
+
 
     // 모든 필드가 입력되었는지 검증
     if(!this.validateService.validateRegister(user)){
@@ -69,6 +92,7 @@ export class RegisterComponent implements OnInit {
           cssClass: 'alert-success',
           timeout: 3000,
         });
+        Swal.fire('등록이 완료되었습니다.', '로그인을 시도해주세요.', 'success');
         this.router.navigate(['/login']);
       } else {
         this.flashMessage.show('Something went wrong', {
@@ -79,4 +103,7 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
+
+  
+
 }

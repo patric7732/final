@@ -1,3 +1,5 @@
+<br>
+<div class="qr">
 <h2 class="page-header">QR명함 생성 - {{ username }}</h2>
 <br />
 <div class="mb-3">
@@ -7,11 +9,14 @@
 <textarea
 class="form-control"
 id="exampleFormControlInput2"
-rows="4"
+rows="3"
 disabled
 >{{ card }}</textarea
 >
 </div>
-
+<div class="qr1">
 <ngx-qrcode [elementType]="elementType" [value]="value" [width]="500">
 </ngx-qrcode>
+</div>
+</div>
+

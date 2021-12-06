@@ -22,6 +22,7 @@ export class AuthService {
     // 2. 클라우드서버에서운영시
     return ep;
   }
+  
   // authToken: any;
   // user: User;
 
@@ -111,5 +112,13 @@ getCard(username: any): Observable<any> {
       `http://api.exchangeratesapi.io/v1/latest?access_key=${APIKey}`
       );
     }
+
+
+    editUser(user: User): Observable<any> {
+      const registerUrl = "http://localhost:3000/users/edit";
+      // const registerUrl = this.prepEndpoint('users/register');
+      return this.http.post<any>(registerUrl, user, httpOptions);
+    }
+    
 
 }
